@@ -29,14 +29,13 @@
   margin-left: 0.5rem;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.footer a span {
+  color: #1db954;
+  font-weight: 600;
 }
 
 .title a {
-  color: #0070f3;
+  color: #1db954;
   text-decoration: none;
 }
 
@@ -95,8 +94,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #1db954;
+  border-color: #1db954;
 }
 
 .card h3 {
