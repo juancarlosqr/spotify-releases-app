@@ -34,7 +34,7 @@ export default async (req, res) => {
       tokenApiOptions
     );
     const data = await response.json();
-    res.redirect('/?' + querystring.stringify(data));
+    res.redirect('/releases?' + querystring.stringify(data));
   } catch (error) {
     res.statusCode = 500;
     res.json({ error });
