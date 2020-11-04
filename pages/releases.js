@@ -6,8 +6,6 @@ import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 
 export default function Releases({ user, releases }) {
-  console.log({ user, releases });
-
   return (
     <div className={styles.container}>
       <Head>
