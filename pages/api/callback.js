@@ -8,21 +8,26 @@ import {
 } from '../../config/spotify';
 
 export default async (req, res) => {
-  const { code } = req.query;
+  const { code, error } = req.query;
+
+  if (error) {
+    res.redirect('/');
+    return;
+  }
 
   const body = new URLSearchParams();
   body.append('code', code);
   body.append('redirect_uri', SPOTIFY_REDIRECT_URI);
   body.append('grant_type', 'authorization_code');
 
+  const basicAuthToken = Buffer.from(
+    SPOTIFY_CLIENT_ID + ':' + SPOTIFY_CLIENT_SECRET
+  ).toString('base64');
+
   const tokenApiOptions = {
     body,
     headers: {
-      Authorization:
-        'Basic ' +
-        Buffer.from(SPOTIFY_CLIENT_ID + ':' + SPOTIFY_CLIENT_SECRET).toString(
-          'base64'
-        ),
+      Authorization: `Basic ${basicAuthToken}`,
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     method: 'POST',
