@@ -5,13 +5,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 
-export default function Home({ user, releases }) {
+export default function Releases({ user, releases }) {
   console.log({ user, releases });
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>Spotify Releases</title>
+        <title>{user.display_name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -62,7 +62,7 @@ const fetchSpotifyData = (options) => {
   );
 };
 
-Home.getInitialProps = async ({ query }) => {
+Releases.getInitialProps = async ({ query }) => {
   try {
     const { access_token } = query;
     const options = {
