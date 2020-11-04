@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <a href="https://www.spotify.com/" className={styles.card}>
+          <a href="/api/login" className={styles.card}>
             <h3>Connect 🎧</h3>
             <p>
               Sign-In with your Spotify account to check the latest releases.
